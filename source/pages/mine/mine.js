@@ -1,4 +1,4 @@
-// pages/content/content.js
+// pages/mine/mine.js
 import {
   AppBase
 } from "../../appbase";
@@ -8,6 +8,9 @@ import {
 import {
   InstApi
 } from "../../apis/inst.api.js";
+import {
+  AboutApi
+} from "../../apis/about.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -19,14 +22,20 @@ class Content extends AppBase {
     super.onLoad(options);
   }
   onMyShow() {
-    console.log(545555555555);
     var that = this;
-    var instapi = new InstApi();
-    instapi.indexbanner({}, (indexbanner) => {
+    var about = new AboutApi();
+    about.aboutinfo({}, (about) => {
+      console.log(about)
       this.Base.setMyData({
-        indexbanner
+        about
       });
-    });
+    })
+  }
+  
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '关于我们',
+    })
   }
 }
 var content = new Content();

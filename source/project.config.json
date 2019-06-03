@@ -11,14 +11,16 @@
 		"newFeature": true,
 		"autoAudits": false
 	},
-	"compileType": "miniprogram",
+	"compileType": "helpfooter",
 	"libVersion": "2.5.0",
-	"appid": "",
-	"projectname": "",
+	"appid": "wx9bd705284e9af21e",
+	"projectname": "%E5%85%AC%E5%8F%B8%E5%B0%8F%E7%A8%8B%E5%BA%8F",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -28,13 +30,45 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "解决方案",
+					"pathName": "pages/solution/solution",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "案例展示",
+					"pathName": "pages/showcase/showcase",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/mine/mine",
+					"scene": null
+				}
+			]
 		}
 	}
 }

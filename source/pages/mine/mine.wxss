@@ -1,0 +1,6 @@
+/* pages/mine/mine.wxss */
+.hezi{
+    width: 335px;
+    border: 15px solid white;
+   
+}

@@ -1,0 +1,6 @@
+<!--pages/solution/solution.wxml-->
+<view>
+  <view>
+    <image class='toubu' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+  </view>
+</view>

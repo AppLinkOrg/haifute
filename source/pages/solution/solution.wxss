@@ -1,0 +1,5 @@
+/* pages/solution/solution.wxss */
+.toubu{
+  width: 750rpx;
+  height: 100rpx;
+}

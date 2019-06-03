@@ -1,1 +1,66 @@
-home
+<!--pages/home/home.wxml-->
+<view>
+  <swiper indicator-dots='{{false}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:300rpx;'>
+        <block wx:for="{{indexbanner}}" wx:key="k">
+          <swiper-item>
+            <image style='height:300rpx;' mode='aspectFill' class='lunbo' src="{{uploadpath}}indexbanner/{{item.img}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+
+  <view class='flex-center txt-bold padding-10'>小程序·大市场</view>
+  <view class='padding-10'></view>
+  <view class='flex-center' style='height:3rpx;width:60rpx;background:black;'></view>
+
+
+  <view class='flex-row'>
+    <view>
+      <view class='margin-left-40 margin-top' style='width:310rpx'>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='padding-10'></view>
+        <view class='flex-center h5 txt-bold'>流量红包</view>
+        <view class='padding-8'></view>
+        <view class='h6 txt-gray'>共享9.35亿微信注册用户，6.5亿微信支付用户，2000万微信公众号，率先上线小程序，抢占流量红利
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <view class='margin-left-40 margin-top' style='width:320rpx'>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='padding-10'></view>
+        <view class='flex-center h5 txt-bold'>即用即走</view>
+        <view class='padding-8'></view>
+        <view class='h6 txt-gray'>拒绝满屏僵尸App，不要恼人的安装更新推送，即用即走，功能强大，简单高效，就是潇酒!
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='flex-row'>
+    <view>
+      <view class='margin-left-40 margin-top' style='width:310rpx'>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='padding-10'></view>
+        <view class='flex-center h5 txt-bold'>流量红包</view>
+        <view class='padding-8'></view>
+        <view class='h6 txt-gray'>共享9.35亿微信注册用户，6.5亿微信支付用户，2000万微信公众号，率先上线小程序，抢占流量红利
+        </view>
+      </view>
+    </view>
+
+    <view>
+      <view class='margin-left-40 margin-top' style='width:320rpx'>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='padding-10'></view>
+        <view class='flex-center h5 txt-bold'>即用即走</view>
+        <view class='padding-8'></view>
+        <view class='h6 txt-gray'>拒绝满屏僵尸App，不要恼人的安装更新推送，即用即走，功能强大，简单高效，就是潇酒!
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

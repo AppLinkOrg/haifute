@@ -19,14 +19,13 @@ class Content extends AppBase {
     super.onLoad(options);
   }
   onMyShow() {
-    console.log(545555555555);
     var that = this;
-    var instapi = new InstApi();
-    instapi.indexbanner({}, (indexbanner) => {
-      this.Base.setMyData({
-        indexbanner
-      });
-    });
+  }
+
+  setPageTitle(instinfo) {
+    wx.setNavigationBarTitle({
+      title: '解决方案',
+    })
   }
 }
 var content = new Content();

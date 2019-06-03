@@ -228,6 +228,9 @@ button[disabled][type=primary] {
 .padding-5{
   padding:5rpx;
 }
+.padding-8{
+  padding:8rpx;
+}
 .padding-10{
   padding:10rpx;
 }
@@ -389,6 +392,9 @@ button[disabled][type=primary] {
 }
 .margin-left-50{
   margin-left:50rpx;
+}
+.margin-left-80{
+  margin-left:80rpx;
 }
 .margin-right-15{
   margin-right:15rpx;
