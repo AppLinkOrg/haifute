@@ -1,6 +1,29 @@
 /* pages/mine/mine.wxss */
-.hezi{
-    width: 335px;
-    border: 15px solid white;
-   
+
+page {
+  background: #f0f0f0;
+}
+
+.hezi {
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  background-color: white;
+  padding: 15px;
+  margin: 5px;
+}
+
+.toubu {
+  width: 375px;
+  height: 150px;
+}
+
+.lan {
+  color: #009dd9;
+  text-align: center;
+}
+
+.xuxian {
+  width: 100%;
+  height: 1rpx;
+  background: #f0f0f0;
 }

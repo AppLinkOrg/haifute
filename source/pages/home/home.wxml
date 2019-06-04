@@ -1,12 +1,12 @@
 <!--pages/home/home.wxml-->
 <view>
-  <swiper indicator-dots='{{false}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:300rpx;'>
-        <block wx:for="{{indexbanner}}" wx:key="k">
-          <swiper-item>
-            <image style='height:300rpx;' mode='aspectFill' class='lunbo' src="{{uploadpath}}indexbanner/{{item.img}}" />
-          </swiper-item>
-        </block>
-      </swiper>
+  <swiper indicator-dots='{{false}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:421rpx;'>
+    <block wx:for="{{indexbanner}}" wx:key="k">
+      <swiper-item>
+        <image style='height:421rpx;' mode='aspectFill' class='lunbo' src="{{uploadpath}}indexbanner/{{item.img}}" />
+      </swiper-item>
+    </block>
+  </swiper>
 
   <view class='flex-center txt-bold padding-10'>小程序·大市场</view>
   <view class='padding-10'></view>
@@ -16,22 +16,21 @@
   <view class='flex-row'>
     <view>
       <view class='margin-left-40 margin-top' style='width:310rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module1.img}}'></image>
         <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>流量红包</view>
+        <view class='flex-center h5 txt-bold'>{{module1.name}}</view>
         <view class='padding-8'></view>
-        <view class='h6 txt-gray'>共享9.35亿微信注册用户，6.5亿微信支付用户，2000万微信公众号，率先上线小程序，抢占流量红利
-        </view>
+        <view class='h6 txt-gray'>{{module1.content}}</view>
       </view>
     </view>
 
     <view>
       <view class='margin-left-40 margin-top' style='width:320rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module2.img}}'></image>
         <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>即用即走</view>
+        <view class='flex-center h5 txt-bold'>{{module2.name}}</view>
         <view class='padding-8'></view>
-        <view class='h6 txt-gray'>拒绝满屏僵尸App，不要恼人的安装更新推送，即用即走，功能强大，简单高效，就是潇酒!
+        <view class='h6 txt-gray'>{{module2.content}}
         </view>
       </view>
     </view>
@@ -41,26 +40,206 @@
   <view class='flex-row'>
     <view>
       <view class='margin-left-40 margin-top' style='width:310rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module3.img}}'></image>
         <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>流量红包</view>
+        <view class='flex-center h5 txt-bold'>{{module3.name}}</view>
         <view class='padding-8'></view>
-        <view class='h6 txt-gray'>共享9.35亿微信注册用户，6.5亿微信支付用户，2000万微信公众号，率先上线小程序，抢占流量红利
-        </view>
+        <view class='h6 txt-gray'>{{module3.content}}</view>
       </view>
     </view>
 
     <view>
       <view class='margin-left-40 margin-top' style='width:320rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module4.img}}'></image>
         <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>即用即走</view>
+        <view class='flex-center h5 txt-bold'>{{module4.name}}</view>
         <view class='padding-8'></view>
-        <view class='h6 txt-gray'>拒绝满屏僵尸App，不要恼人的安装更新推送，即用即走，功能强大，简单高效，就是潇酒!
+        <view class='h6 txt-gray'>{{module4.content}}
         </view>
       </view>
     </view>
 
   </view>
+
+  <view class='padding-20'></view>
+  <view style='width:100%;height:20rpx;background:#f0f0f0'></view>
+  <view class='padding-10'></view>
+  <view class='flex-center txt-bold padding-10'>发布需求</view>
+  <view class='padding-10'></view>
+
+  <view class='div'>
+    <view class=''>
+      <view class='txt-bold'>项目信息</view>
+      <view>
+        <view class='padding-20'></view>
+        <view class='h5 txt-gray'>项目归属</view>
+        <view class='padding-5'></view>
+
+
+        <picker class='hezi'>
+          <view class='flex-row'>
+            <view class='h5'>企业</view>
+
+
+            <view class='flex-1'></view>
+            <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+          </view>
+        </picker>
+
+
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">项目名称</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <input class='h5' placeholder-style='color:gray' placeholder='请填写项目名称' value='{{name}}' bindinput='nameChange'></input>
+        </view>
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">项目预算</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <view class='h5'>企业</view>
+          <view class='flex-1'></view>
+          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+        </view>
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">项目周期</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <view class='h5'>企业</view>
+          <view class='flex-1'></view>
+          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+        </view>
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">服务器</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <view class='h5'>不限</view>
+          <view class='flex-1'></view>
+          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+        </view>
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">需求文档</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <view class='h5'>乙方提供</view>
+          <view class='flex-1'></view>
+          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+        </view>
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">设计稿</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <view class='h5'>乙方提供</view>
+          <view class='flex-1'></view>
+          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+        </view>
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">项目描述</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <textarea class='h5' style='width:325px' placeholder='请详细描述你的项目需求，包括但不限于项目简介、主要功能点、可参考产品'></textarea>
+        </view>
+      </view>
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">参考产品</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <input class='h5' placeholder-style='color:gray' placeholder='请填写小程序名称'></input>
+        </view>
+      </view>
+
+
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">所在城市</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <view class='h5'>深圳市</view>
+          <view class='flex-1'></view>
+          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+        </view>
+      </view>
+
+      <view class='padding-30'></view>
+      <view class='txt-bold'>联系方式</view>
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">姓名</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <input class='h5' placeholder-style='color:gray' placeholder='请填写姓名'></input>
+        </view>
+      </view>
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">微信</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <input class='h5' placeholder-style='color:gray' placeholder='请填写微信号'></input>
+        </view>
+      </view>
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">手机</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <input class='h5' placeholder-style='color:gray' placeholder='请填写手机'></input>
+        </view>
+      </view>
+
+      <view>
+        <view class='padding-20'></view>
+        <view class="h5 txt-gray">邮箱</view>
+        <view class='padding-5'></view>
+        <view class='flex-row  hezi'>
+          <input class='h5' placeholder-style='color:gray' placeholder='请填写邮箱'></input>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+
+  <view class='padding-30'></view>
+  <button class='button txt-white flex-center'>确认</button>
+  <view class='padding-40'></view>
+
+
+
+
 
 </view>

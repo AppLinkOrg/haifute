@@ -269,6 +269,7 @@ export class AppBase {
         // wx.redirectTo({
         //   url: '/pages/auth/auth',
         // })
+        
       }
       this.Base.setMyData({ memberinfo: info });
       that.onMyShow();

@@ -1,2 +1,80 @@
 <!--pages/showcase/showcase.wxml-->
-<text>pages/showcase/showcase.wxml</text>
+<view>
+
+  <view class='padding-5'></view>
+  <view class='flex-row '>
+    <view style='width:193rpx'></view>
+    <image class='icon-25 ' src='{{uploadpath}}resource/{{res.caihong}}'></image>
+    <view style='width:100rpx'></view>
+    <view class='center'>微站</view>
+    <view style='width:100rpx'></view>
+    <image class='icon-25' src='{{uploadpath}}resource/{{res.caihong}}'></image>
+  </view>
+
+
+  <view class='flex-row'>
+    <view class='hezi'>
+      <view class='flex-row'>
+        <view class='flex-1'></view>
+        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-5'></view>
+      <view class='ju'>小程序名</view>
+      <view class='padding-10'></view>
+    </view>
+
+    <view class='hezi'>
+      <view class='flex-row'>
+        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-5'></view>
+      <view class='margin-left-60'>小程序名</view>
+      <view class='padding-10'></view>
+
+    </view>
+  </view>
+
+  <view style='height:1px;background:#f0f0f0;'></view>
+
+
+  <!-- 例子 -->
+  <view class='padding-5'></view>
+  <view class='flex-row '>
+    <view style='width:193rpx'></view>
+    <image class='icon-25 ' src='{{uploadpath}}resource/{{res.caihong}}'></image>
+    <view style='width:100rpx'></view>
+    <view class='center'>微站</view>
+    <view style='width:100rpx'></view>
+    <image class='icon-25' src='{{uploadpath}}resource/{{res.caihong}}'></image>
+  </view>
+
+
+  <view class='flex-row'>
+    <view class='hezi'>
+      <view class='flex-row'>
+        <view class='flex-1'></view>
+        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-5'></view>
+      <view class='ju'>小程序名</view>
+      <view class='padding-10'></view>
+    </view>
+
+    <view class='hezi'>
+      <view class='flex-row'>
+        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-5'></view>
+      <view class='margin-left-60'>小程序名</view>
+      <view class='padding-10'></view>
+
+    </view>
+  </view>
+  <view style='height:1px;background:#f0f0f0;'></view>
+
+
+</view>

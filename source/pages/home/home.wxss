@@ -1,14 +1,25 @@
 .lunbo{
   width: 100%;
-  height: 150px
+  height: 562rpx;
 }
 .flex-center{
   text-align:center;
   align-items: center;
   margin:auto;
 }
-.hezi{
-    left: -50rpx;
-    width: 140px;
-    border: 25px solid turquoise;
+.div{
+  padding: 10rpx;
+  margin: 10px
 }
+.hezi{
+    border-radius: 5px;
+    border: 1px solid #ccc9c9;
+    padding: 10rpx;
+}
+.button{
+  width: 240px;
+  /* height: 40px; */
+  border-radius: 50px;
+  background-color: #10C2FE;
+}
+

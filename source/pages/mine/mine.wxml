@@ -1,28 +1,42 @@
 <!--pages/mine/mine.wxml-->
+
+<image class='toubu' src='{{uploadpath}}about/{{about.img}}'></image>
+
 <view class='hezi'>
-
-  <view class='txt-bold'>简介</view>
-  <view class='padding-5'></view>
-
-  <view class='h5'>{{about[0].synopsis}}</view>
+  <view class='lan'>简介</view>
+  <view class='padding-10'></view>
+  <view class='xuxian'></view>
   <view class='padding-10'></view>
 
-  <view class='txt-bold'>联系我们</view>
-  <view class='padding-5'></view>
-  <view class='margin-left-20'>
-    <view class='h5'>{{about[0].email}}</view>
-    <view class='h5'>{{about[0].phone}}</view>
-    <view class='h5'>{{about[0].address}}</view>
-  </view>
-  <view class='padding-10'></view>
-  <view class='txt-bold'>官方微信</view>
-  <view class='padding-5'></view>
-
-  <view class='h5'>{{about[0].official}}</view>
-  <view class='padding-5'></view>
-
-  <image class='icon-75' src='{{uploadpath}}about/{{about[0].code}}'></image>
-
+  <text class='h5'>{{about.synopsis}}</text>
+  <!-- <view class='padding-10'></view> -->
 </view>
 
-  <image src='{{uploadpath}}about/{{about[0].code}}' style='width:375px;height:120px'></image>
+<view class='hezi'>
+  <view class='lan'>联系我们</view>
+  <view class='padding-10'></view>
+  <view class='xuxian'></view>
+  <view class='padding-10'></view>
+  <view class=''>
+    <view class='h5'>电话：{{about.phone}}</view>
+    <view class='h5'>地址：{{about.address}}</view>
+    <view class='h5'>邮箱：{{about.email}}</view>
+  </view>
+</view>
+
+<view class='hezi'>
+  <!-- <view class='padding-10'></view> -->
+  <view class='lan'>官方微信</view>
+  <view class='padding-10'></view>
+  <view class='xuxian'></view>
+  <view class='padding-10'></view>
+  <view class='h5'>{{about.official}}</view>
+  <view class='padding-5'></view>
+  <view >
+    <view></view>
+    <image class='icon-75' src='{{uploadpath}}about/{{about.code}}'></image>
+    <view></view>
+  </view>
+</view>
+
+<view class='padding-20'></view>

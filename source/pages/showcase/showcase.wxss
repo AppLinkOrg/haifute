@@ -1,1 +1,13 @@
 /* pages/showcase/showcase.wxss */
+.center{
+  text-align: center;
+}
+.hezi{
+
+  /* border-radius: 10px; */
+  margin-left: 40rpx;
+  margin-top: 40rpx;
+}
+.ju {
+  text-align: center;
+}

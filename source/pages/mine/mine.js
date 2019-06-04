@@ -20,9 +20,6 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-  }
-  onMyShow() {
-    var that = this;
     var about = new AboutApi();
     about.aboutinfo({}, (about) => {
       console.log(about)
@@ -30,6 +27,10 @@ class Content extends AppBase {
         about
       });
     })
+  }
+  onMyShow() {
+    var that = this;
+    
   }
   
   setPageTitle(instinfo) {

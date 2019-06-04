@@ -3,4 +3,58 @@
   <view>
     <image class='toubu' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
   </view>
+
+  <view class='flex-row'>
+    <view class='hezi margin-top-80;'>
+      <view class='flex-row'>
+        <view class='flex-1'></view>
+        <image class='icon-100' src='{{uploadpath}}solution1/{{solution1.img}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-10'></view>
+      <view class='ju'>{{solution1.name}}</view>
+      <view class='padding-5'></view>
+      <view class='ju txt-bold'>{{solution1.english}}</view>
+    </view>
+
+    <view class='hezi margin-top-80;'>
+      <view class='flex-row'>
+        <view class='flex-1'></view>
+        <image class='icon-100' src='{{uploadpath}}fangan1/{{solution2.img}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-10'></view>
+      <view class='ju'>{{solution2.name}}</view>
+      <view class='padding-5'></view>
+      <view class='ju txt-bold'>{{solution2.english}}</view>
+    </view>
+  </view>
+
+
+  <view class='flex-row'>
+    <view class='hezi margin-top;'>
+      <view class='flex-row'>
+        <view class='flex-1'></view>
+        <image class='icon-100' src='{{uploadpath}}solution3/{{solution3.img}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-10'></view>
+      <view class='ju'>{{solution3.name}}</view>
+      <view class='padding-5'></view>
+      <view class='ju txt-bold'>{{solution3.english}}</view>
+    </view>
+
+    <view class='hezi margin-top;'>
+      <view class='flex-row'>
+        <view class='flex-1'></view>
+        <image class='icon-100' src='{{uploadpath}}solution4/{{solution4.img}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-10'></view>
+      <view class='ju'>{{solution4.name}}</view>
+      <view class='padding-5'></view>
+      <view class='ju txt-bold'>{{solution4.english}}</view>
+    </view>
+  </view>
+
 </view>
