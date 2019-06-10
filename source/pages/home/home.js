@@ -30,7 +30,7 @@ class Content extends AppBase {
     this.Base.setMyData({
       itemname: "请填写项目名称",
       describe: "请详细描述你的项目需求，包括但不限于项目简介、主要功能点。",
-      reference: "请填写参考的小程序名称",
+      reference: "请填写参考的产品",
       name: "请填写姓名",
       mobile: "请填写手机号"
     });
@@ -290,7 +290,7 @@ class Content extends AppBase {
       itemname: "请填写项目名称",
       yusuan1: "",
       describe: "请详细描述你的项目需求，包括但不限于项目简介、主要功能点。",
-      reference: "请填写参考的小程序名称",
+      reference: "请填写参考的产品",
       name: "请填写姓名",
       mobile: "请填写手机号"
     })
@@ -376,7 +376,7 @@ class Content extends AppBase {
     var b = this.Base.getMyData().reference;
     if (b == " " || b == "") {
       this.Base.setMyData({
-        reference: "请填写参考的小程序名称"
+        reference: "请填写参考的产品"
       })
     }
   }

@@ -3,7 +3,7 @@
   <swiper indicator-dots='{{true}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:421rpx;'>
     <block wx:for="{{indexbanner}}" wx:key="k">
       <swiper-item>
-        <image style='height:420rpx;' mode='aspectFill' bindtap='viewPhoto' data-type='{{item.type}}' data-url='{{item.url}}'   id='{{uploadpath}}indexbanner/{{item.url_img}}'  class='lunbo' src="{{uploadpath}}indexbanner/{{item.img}}" />
+        <image style='height:420rpx;' mode='aspectFill' bindtap='viewPhoto' data-type='{{item.type}}' data-url='{{item.url}}' id='{{uploadpath}}indexbanner/{{item.url_img}}' class='lunbo' src="{{uploadpath}}indexbanner/{{item.img}}" />
       </swiper-item>
     </block>
   </swiper>
@@ -31,12 +31,12 @@
 
   <view class='margin-top'>
     <swiper indicator-dots='{{false}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:130rpx;width:100vw;'>
-    <block wx:for="{{lunbo}}" wx:key="k">
-      <swiper-item>
-        <image mode='aspectFill' class='lunbo2' bindtap='viewPhoto' data-type='{{item.type}}' id='{{uploadpath}}indexbanner/{{item.url_img}}' data-url='{{item.url}}' src="{{uploadpath}}indexbanner/{{item.img}}" />
-      </swiper-item>
-    </block>
-  </swiper>
+      <block wx:for="{{lunbo}}" wx:key="k">
+        <swiper-item>
+          <image mode='aspectFill' class='lunbo2' bindtap='viewPhoto' data-type='{{item.type}}' id='{{uploadpath}}indexbanner/{{item.url_img}}' data-url='{{item.url}}' src="{{uploadpath}}indexbanner/{{item.img}}" />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 
 
@@ -70,8 +70,7 @@
         <view class="h5 txt-gray">项目名称</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <input  class='h5' placeholder-style='color:gray' bindfocus='ss' bindblur="ss1" adjust-position='false' 
-          placeholder="{{itemname}}" value='{{itemname}}' bindinput='itemnameChange'></input>
+          <input class='h5' placeholder-style='color:gray' bindfocus='ss' bindblur="ss1" adjust-position='false' placeholder="{{itemname}}" value='{{itemname}}' bindinput='itemnameChange'></input>
         </view>
       </view>
 
@@ -108,7 +107,7 @@
         <view class="h5 txt-gray">项目描述</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <textarea class='h5' style='width:325px'  bindfocus='a' value="{{describe}}"  bindblur="a1" bindinput='describeChange' adjust-position='false' placeholder='{{describe}}'></textarea>
+          <textarea class='h5' style='width:325px' bindfocus='a' value="{{describe}}" bindblur="a1" bindinput='describeChange' adjust-position='false' placeholder='{{describe}}'></textarea>
         </view>
       </view>
 
@@ -118,7 +117,7 @@
         <view class="h5 txt-gray">参考产品（选填）</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <input class='h5' placeholder-style='color:gray' bindfocus='b' value="{{reference}}" bindblur="b1" bindinput='referenceChange' placeholder='{{reference}}'></input>
+          <input class='h5' style='width:325px' placeholder-style='color:gray' bindfocus='b' value="{{reference}}" bindblur="b1" bindinput='referenceChange' placeholder='{{reference}}'></input>
         </view>
       </view>
 
