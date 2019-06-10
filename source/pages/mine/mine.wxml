@@ -1,42 +1,36 @@
 <!--pages/mine/mine.wxml-->
-
-<image class='toubu' src='{{uploadpath}}about/{{about.img}}'></image>
-
-<view class='hezi'>
-  <view class='lan'>简介</view>
-  <view class='padding-10'></view>
-  <view class='xuxian'></view>
-  <view class='padding-10'></view>
-
-  <text class='h5'>{{about.synopsis}}</text>
-  <!-- <view class='padding-10'></view> -->
+<!-- <view wx:for='{{indexbanner}}' wx:key='k'>
+  <image class='toubu' src='{{uploadpath}}indexbanner/{{item.img}}' bindtap='viewPhoto'></image>
+</view> -->
+<view>
+  <swiper indicator-dots='{{false}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:420rpx;width:100vw;'>
+    <block wx:for="{{indexbanner}}" wx:key="k">
+      <swiper-item catchtouchmove="stopTouchMove">
+        <image mode='aspectFill' bindtap='viewPhoto' data-type='{{item.type}}' data-url='{{item.url}}' id='{{uploadpath}}indexbanner/{{item.url_img}}' class='toubu' src="{{uploadpath}}indexbanner/{{item.img}}" />
+      </swiper-item>
+    </block>
+  </swiper>
 </view>
 
-<view class='hezi'>
-  <view class='lan'>联系我们</view>
-  <view class='padding-10'></view>
-  <view class='xuxian'></view>
-  <view class='padding-10'></view>
-  <view class=''>
-    <view class='h5'>电话：{{about.phone}}</view>
-    <view class='h5'>地址：{{about.address}}</view>
-    <view class='h5'>邮箱：{{about.email}}</view>
-  </view>
-</view>
 
-<view class='hezi'>
+<view class='hezi' wx:for='{{about}}' wx:key='k'>
   <!-- <view class='padding-10'></view> -->
-  <view class='lan'>官方微信</view>
+  <view class='lan'>{{item.title}}</view>
   <view class='padding-10'></view>
   <view class='xuxian'></view>
   <view class='padding-10'></view>
-  <view class='h5'>{{about.official}}</view>
+  <text class='h5'>{{item.connect}}</text>
   <view class='padding-5'></view>
-  <view >
+  <view>
     <view></view>
-    <image class='icon-75' src='{{uploadpath}}about/{{about.code}}'></image>
+    <image class='icon-75' src='{{uploadpath}}about/{{item.img}}' wx:if='{{item.img!=""}}'></image>
     <view></view>
   </view>
 </view>
 
 <view class='padding-20'></view>
+
+<view class='hengxian'></view>
+<view class='_center'>
+  <text class='dd text-center h6 txt-white'>{{info.beian}}</text>
+</view>

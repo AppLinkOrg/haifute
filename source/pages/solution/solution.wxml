@@ -1,60 +1,57 @@
 <!--pages/solution/solution.wxml-->
 <view>
+  <!-- <view>
+    <image class='toubu' src='{{uploadpath}}resource/{{res.jiejuefangan}}'></image>
+  </view> -->
+  <view class='padding-10'></view>
+
+  <view class='flex-row flex-center flex-wrap'>
+
+    <view class='hezi margin-top-20;' wx:for='{{solution1}}' wx:key='k' bindtap='open' wx:for-index='idx' id='{{item.id}}'>
+      <view class='flex-row'>
+        <view class='flex-1'></view>
+        <image class='icon-100' src='{{uploadpath}}solution/{{item.img}}'></image>
+        <view class='flex-1'></view>
+      </view>
+      <view class='padding-10'></view>
+      <view class='ju'>{{item.name}}</view>
+      <view class='padding-5'></view>
+      <view class='ju txt-bold'>{{item.english}}</view>
+    </view>
+  </view>
+</view>
+
+<view class='padding-20'></view>
+
+<view class='black-block' wx:if='{{close=="b"}}'></view>
+
+<view class='lala' wx:if='{{close=="b"}}' wx:if='{{solutioninfo.switch=="否"}}'>
   <view>
-    <image class='toubu' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
-  </view>
-
-  <view class='flex-row'>
-    <view class='hezi margin-top-80;'>
+    <view class='height-200' style='background-image:url({{uploadpath}}solution/{{solutioninfo.picture}});background-size:100% 100%;'>
       <view class='flex-row'>
         <view class='flex-1'></view>
-        <image class='icon-100' src='{{uploadpath}}solution1/{{solution1.img}}'></image>
-        <view class='flex-1'></view>
+        <image class='img icon-25 ' src='{{uploadpath}}resource/{{res.close}}' bindtap='close'></image>
       </view>
-      <view class='padding-10'></view>
-      <view class='ju'>{{solution1.name}}</view>
-      <view class='padding-5'></view>
-      <view class='ju txt-bold'>{{solution1.english}}</view>
     </view>
-
-    <view class='hezi margin-top-80;'>
-      <view class='flex-row'>
-        <view class='flex-1'></view>
-        <image class='icon-100' src='{{uploadpath}}fangan1/{{solution2.img}}'></image>
-        <view class='flex-1'></view>
-      </view>
-      <view class='padding-10'></view>
-      <view class='ju'>{{solution2.name}}</view>
-      <view class='padding-5'></view>
-      <view class='ju txt-bold'>{{solution2.english}}</view>
+    <view class='txt'>
+      <view class='txt-black txt-bold'>{{solutioninfo.title}}</view>
+      <view class='h5 margin-top-10'>{{solutioninfo.details}}</view>
     </view>
   </view>
 
+</view>
 
-  <view class='flex-row'>
-    <view class='hezi margin-top;'>
-      <view class='flex-row'>
-        <view class='flex-1'></view>
-        <image class='icon-100' src='{{uploadpath}}solution3/{{solution3.img}}'></image>
-        <view class='flex-1'></view>
-      </view>
-      <view class='padding-10'></view>
-      <view class='ju'>{{solution3.name}}</view>
-      <view class='padding-5'></view>
-      <view class='ju txt-bold'>{{solution3.english}}</view>
-    </view>
-
-    <view class='hezi margin-top;'>
-      <view class='flex-row'>
-        <view class='flex-1'></view>
-        <image class='icon-100' src='{{uploadpath}}solution4/{{solution4.img}}'></image>
-        <view class='flex-1'></view>
-      </view>
-      <view class='padding-10'></view>
-      <view class='ju'>{{solution4.name}}</view>
-      <view class='padding-5'></view>
-      <view class='ju txt-bold'>{{solution4.english}}</view>
+<view class='lala' wx:if='{{close=="b"}}' wx:if='{{solutioninfo.switch=="是"}}'>
+  <!-- <view wx:if='{{info.switch=="是"}}'> -->
+  <view style='background-image:url({{uploadpath}}solution/{{solutioninfo.bigimg}});background-size:100% 100%;height:100%'>
+    <view class='flex-row'>
+      <view class='flex-1'></view>
+      <image class='img icon-25 ' src='{{uploadpath}}resource/{{res.close}}' bindtap='close'></image>
     </view>
   </view>
+</view>
 
+<view class='hengxian'></view>
+<view class='_center'>
+  <text class='dd h6 text-center'>{{info.beian}}</text>
 </view>

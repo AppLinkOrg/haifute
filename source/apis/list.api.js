@@ -8,9 +8,9 @@ var wechatApi=new WechatApi();
 import {
   ApiConfig
 } from 'apiconfig';
-export class ModuleApi {
+export class ListApi {
   //反解密数据
-  module(json, callback, showLoading = true) {
+  showcase(json, callback, showLoading = true) {
 
     if (showLoading)
       ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class ModuleApi {
     var header = ApiConfig.GetHeader();
     console.log(header);
     wx.request({
-      url: ApiConfig.GetApiUrl() + 'module/module',
+      url: ApiConfig.GetApiUrl() + 'list/showcase',
       data: json,
       method: 'POST',
       dataType: 'json',
@@ -41,5 +41,35 @@ export class ModuleApi {
     })
   }
 
+  case(json, callback, showLoading = true) {
+
+    if (showLoading)
+      ApiConfig.ShowLoading();
+
+    var header = ApiConfig.GetHeader();
+    console.log(header);
+    wx.request({
+      url: ApiConfig.GetApiUrl() + 'list/case',
+      data: json,
+      method: 'POST',
+      dataType: 'json',
+      header: header,
+      success: function (res) {
+        if (callback != null) {
+          callback(res.data);
+        }
+      },
+      fail: function (res) {
+        console.log(res);
+        callback(false);
+      },
+      complete: function (res) {
+        console.log(res);
+
+        if (showLoading)
+          ApiConfig.CloseLoading();
+      }
+    })
+  }
 
 }

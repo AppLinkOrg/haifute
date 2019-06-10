@@ -8,9 +8,9 @@ var wechatApi=new WechatApi();
 import {
   ApiConfig
 } from 'apiconfig';
-export class ModuleApi {
+export class RegisterApi {
   //反解密数据
-  module(json, callback, showLoading = true) {
+  message(json, callback, showLoading = true) {
 
     if (showLoading)
       ApiConfig.ShowLoading();
@@ -18,7 +18,7 @@ export class ModuleApi {
     var header = ApiConfig.GetHeader();
     console.log(header);
     wx.request({
-      url: ApiConfig.GetApiUrl() + 'module/module',
+      url: ApiConfig.GetApiUrl() + 'register/message',
       data: json,
       method: 'POST',
       dataType: 'json',
@@ -40,6 +40,5 @@ export class ModuleApi {
       }
     })
   }
-
 
 }

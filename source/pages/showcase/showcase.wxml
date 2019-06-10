@@ -1,80 +1,30 @@
 <!--pages/showcase/showcase.wxml-->
+<view  class='ju h6'>{{instinfo.anlitishi}}</view>
+<view class='margin-top-20' style='background:#BFBFBF;height:1rpx'></view>
+
 <view>
+  <view class=''></view>
+  <view wx:for='{{showcaselist}}' key="k">
+    <view class='ju txt-bold h36 margin-top'>{{item.title}}</view>
 
-  <view class='padding-5'></view>
-  <view class='flex-row '>
-    <view style='width:193rpx'></view>
-    <image class='icon-25 ' src='{{uploadpath}}resource/{{res.caihong}}'></image>
-    <view style='width:100rpx'></view>
-    <view class='center'>微站</view>
-    <view style='width:100rpx'></view>
-    <image class='icon-25' src='{{uploadpath}}resource/{{res.caihong}}'></image>
-  </view>
-
-
-  <view class='flex-row'>
-    <view class='hezi'>
-      <view class='flex-row'>
-        <view class='flex-1'></view>
-        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
-        <view class='flex-1'></view>
+    <view class='flex-row flex-center flex-wrap hezi'>
+      <view class='flex-row flex-column margin-top-20 margin-left-50' wx:for='{{item.showcase}}' key="k">
+        <image class='icon-125' src='{{uploadpath}}case/{{item.img}}' bindtap='viewPhoto' id='{{uploadpath}}case/{{item.img}}'></image>
+        <view class='margin-top-10 text-center  huan' style='width:250rpx;height:42px'>{{item.name}}</view>
       </view>
-      <view class='padding-5'></view>
-      <view class='ju'>小程序名</view>
-      <view class='padding-10'></view>
     </view>
-
-    <view class='hezi'>
-      <view class='flex-row'>
-        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
-        <view class='flex-1'></view>
-      </view>
-      <view class='padding-5'></view>
-      <view class='margin-left-60'>小程序名</view>
-      <view class='padding-10'></view>
-
-    </view>
+    <view class='padding-20'></view>
+    <view style='background:#BFBFBF;height:1rpx'></view>
+    <!-- <view class='padding-30'></view> -->
   </view>
-
-  <view style='height:1px;background:#f0f0f0;'></view>
-
-
-  <!-- 例子 -->
-  <view class='padding-5'></view>
-  <view class='flex-row '>
-    <view style='width:193rpx'></view>
-    <image class='icon-25 ' src='{{uploadpath}}resource/{{res.caihong}}'></image>
-    <view style='width:100rpx'></view>
-    <view class='center'>微站</view>
-    <view style='width:100rpx'></view>
-    <image class='icon-25' src='{{uploadpath}}resource/{{res.caihong}}'></image>
-  </view>
-
-
-  <view class='flex-row'>
-    <view class='hezi'>
-      <view class='flex-row'>
-        <view class='flex-1'></view>
-        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
-        <view class='flex-1'></view>
-      </view>
-      <view class='padding-5'></view>
-      <view class='ju'>小程序名</view>
-      <view class='padding-10'></view>
-    </view>
-
-    <view class='hezi'>
-      <view class='flex-row'>
-        <image class='icon-125' src='{{uploadpath}}resource/{{res.lunbo}}'></image>
-        <view class='flex-1'></view>
-      </view>
-      <view class='padding-5'></view>
-      <view class='margin-left-60'>小程序名</view>
-      <view class='padding-10'></view>
-
-    </view>
-  </view>
-  <view style='height:1px;background:#f0f0f0;'></view>
-
 
 </view>
+
+<!-- <view class='hengxian'></view> -->
+
+
+<view class='_center'>
+  <text class='dd h6 text-center'>{{info.beian}}</text>
+</view>
+
+<!-- <view style='height:1px;background:#f0f0f0;'></view> -->

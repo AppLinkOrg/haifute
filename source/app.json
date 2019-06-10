@@ -1,6 +1,8 @@
 {
   "pages": [
+    
     "pages/home/home",
+    "pages/auth/auth",
     "pages/solution/solution",
     "pages/showcase/showcase",
     "pages/mine/mine"
@@ -48,5 +50,9 @@
       }
     ]
   },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wxda7a3b3cf25f057f"
+  ],
   "sitemapLocation": "sitemap.json"
 }

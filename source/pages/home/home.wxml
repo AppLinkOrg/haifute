@@ -1,70 +1,49 @@
 <!--pages/home/home.wxml-->
 <view>
-  <swiper indicator-dots='{{false}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:421rpx;'>
+  <swiper indicator-dots='{{true}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:421rpx;'>
     <block wx:for="{{indexbanner}}" wx:key="k">
       <swiper-item>
-        <image style='height:421rpx;' mode='aspectFill' class='lunbo' src="{{uploadpath}}indexbanner/{{item.img}}" />
+        <image style='height:420rpx;' mode='aspectFill' bindtap='viewPhoto' data-type='{{item.type}}' data-url='{{item.url}}'   id='{{uploadpath}}indexbanner/{{item.url_img}}'  class='lunbo' src="{{uploadpath}}indexbanner/{{item.img}}" />
       </swiper-item>
     </block>
   </swiper>
 
-  <view class='flex-center txt-bold padding-10'>小程序·大市场</view>
+  <view class='h4 flex-center txt-bold padding-30'>{{info.toubutitle}}</view>
   <view class='padding-10'></view>
-  <view class='flex-center' style='height:3rpx;width:60rpx;background:black;'></view>
+  <view class='flex-center' style='height:3rpx;width:150rpx;background:black;'></view>
 
 
-  <view class='flex-row'>
-    <view>
+
+  <view class='flex-row flex-center flex-wrap'>
+
+    <view wx:for='{{module}}' wx:key='k'>
       <view class='margin-left-40 margin-top' style='width:310rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module1.img}}'></image>
+        <image class='icon-75 radius-50' src='{{uploadpath}}module/{{item.img}}'></image>
         <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>{{module1.name}}</view>
+        <view class='flex-center  txt-bold' style='min-height:42px'>{{item.name}}</view>
         <view class='padding-8'></view>
-        <view class='h6 txt-gray'>{{module1.content}}</view>
-      </view>
-    </view>
-
-    <view>
-      <view class='margin-left-40 margin-top' style='width:320rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module2.img}}'></image>
-        <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>{{module2.name}}</view>
-        <view class='padding-8'></view>
-        <view class='h6 txt-gray'>{{module2.content}}
-        </view>
+        <view class='h6 txt-gray' style='min-height:64px'>{{item.content}}</view>
       </view>
     </view>
 
   </view>
 
-  <view class='flex-row'>
-    <view>
-      <view class='margin-left-40 margin-top' style='width:310rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module3.img}}'></image>
-        <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>{{module3.name}}</view>
-        <view class='padding-8'></view>
-        <view class='h6 txt-gray'>{{module3.content}}</view>
-      </view>
-    </view>
 
-    <view>
-      <view class='margin-left-40 margin-top' style='width:320rpx'>
-        <image class='margin-left-80 icon-75 radius-50' src='{{uploadpath}}module1/{{module4.img}}'></image>
-        <view class='padding-10'></view>
-        <view class='flex-center h5 txt-bold'>{{module4.name}}</view>
-        <view class='padding-8'></view>
-        <view class='h6 txt-gray'>{{module4.content}}
-        </view>
-      </view>
-    </view>
-
+  <view class='margin-top'>
+    <swiper indicator-dots='{{false}}' autoplay="{{true}}" circular='{{true}}' interval="4000" duration="1000" style='height:130rpx;width:100vw;'>
+    <block wx:for="{{lunbo}}" wx:key="k">
+      <swiper-item>
+        <image mode='aspectFill' class='lunbo2' bindtap='viewPhoto' data-type='{{item.type}}' id='{{uploadpath}}indexbanner/{{item.url_img}}' data-url='{{item.url}}' src="{{uploadpath}}indexbanner/{{item.img}}" />
+      </swiper-item>
+    </block>
+  </swiper>
   </view>
+
 
   <view class='padding-20'></view>
   <view style='width:100%;height:20rpx;background:#f0f0f0'></view>
   <view class='padding-10'></view>
-  <view class='flex-center txt-bold padding-10'>发布需求</view>
+  <view class='flex-center txt-bold padding-10'>需求咨询</view>
   <view class='padding-10'></view>
 
   <view class='div'>
@@ -74,13 +53,9 @@
         <view class='padding-20'></view>
         <view class='h5 txt-gray'>项目归属</view>
         <view class='padding-5'></view>
-
-
-        <picker class='hezi'>
+        <picker class='hezi' mode='selector' bindchange="guishuChange" range="{{guishu}}" range-key='name'>
           <view class='flex-row'>
-            <view class='h5'>企业</view>
-
-
+            <input class='h5' disabled='false' value='{{guishu1}}' placeholder='请选择项目归属'></input>
             <view class='flex-1'></view>
             <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
           </view>
@@ -95,7 +70,8 @@
         <view class="h5 txt-gray">项目名称</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <input class='h5' placeholder-style='color:gray' placeholder='请填写项目名称' value='{{name}}' bindinput='nameChange'></input>
+          <input  class='h5' placeholder-style='color:gray' bindfocus='ss' bindblur="ss1" adjust-position='false' 
+          placeholder="{{itemname}}" value='{{itemname}}' bindinput='itemnameChange'></input>
         </view>
       </view>
 
@@ -104,93 +80,62 @@
         <view class='padding-20'></view>
         <view class="h5 txt-gray">项目预算</view>
         <view class='padding-5'></view>
-        <view class='flex-row  hezi'>
-          <view class='h5'>企业</view>
-          <view class='flex-1'></view>
-          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
-        </view>
+        <picker class='hezi' mode='selector' bindchange="yusuanChange" range="{{yusuan}}" range-key='yusuan'>
+          <view class='flex-row'>
+            <input class='h5' disabled='false' value='{{yusuan1}}' placeholder='请选择项目预算'></input>
+            <view class='flex-1'></view>
+            <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+          </view>
+        </picker>
       </view>
 
 
-      <view>
+      <!-- <view>
         <view class='padding-20'></view>
         <view class="h5 txt-gray">项目周期</view>
         <view class='padding-5'></view>
-        <view class='flex-row  hezi'>
-          <view class='h5'>企业</view>
-          <view class='flex-1'></view>
-          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
-        </view>
-      </view>
-
-
-      <view>
-        <view class='padding-20'></view>
-        <view class="h5 txt-gray">服务器</view>
-        <view class='padding-5'></view>
-        <view class='flex-row  hezi'>
-          <view class='h5'>不限</view>
-          <view class='flex-1'></view>
-          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
-        </view>
-      </view>
-
-
-      <view>
-        <view class='padding-20'></view>
-        <view class="h5 txt-gray">需求文档</view>
-        <view class='padding-5'></view>
-        <view class='flex-row  hezi'>
-          <view class='h5'>乙方提供</view>
-          <view class='flex-1'></view>
-          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
-        </view>
-      </view>
-
-
-      <view>
-        <view class='padding-20'></view>
-        <view class="h5 txt-gray">设计稿</view>
-        <view class='padding-5'></view>
-        <view class='flex-row  hezi'>
-          <view class='h5'>乙方提供</view>
-          <view class='flex-1'></view>
-          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
-        </view>
-      </view>
-
+        <picker class='hezi' mode='selector' bindchange="zhouqiChange" range="{{period}}" range-key='period'>
+          <view class='flex-row'>
+            <input class='h5' disabled='false' value='{{period1}}' placeholder='请选择项目周期'></input>
+            <view class='flex-1'></view>
+            <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+          </view>
+        </picker>
+      </view> -->
 
       <view>
         <view class='padding-20'></view>
         <view class="h5 txt-gray">项目描述</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <textarea class='h5' style='width:325px' placeholder='请详细描述你的项目需求，包括但不限于项目简介、主要功能点、可参考产品'></textarea>
+          <textarea class='h5' style='width:325px'  bindfocus='a' value="{{describe}}"  bindblur="a1" bindinput='describeChange' adjust-position='false' placeholder='{{describe}}'></textarea>
         </view>
       </view>
 
 
       <view>
         <view class='padding-20'></view>
-        <view class="h5 txt-gray">参考产品</view>
+        <view class="h5 txt-gray">参考产品（选填）</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <input class='h5' placeholder-style='color:gray' placeholder='请填写小程序名称'></input>
+          <input class='h5' placeholder-style='color:gray' bindfocus='b' value="{{reference}}" bindblur="b1" bindinput='referenceChange' placeholder='{{reference}}'></input>
         </view>
       </view>
 
 
 
-      <view>
+      <!-- <view>
         <view class='padding-20'></view>
         <view class="h5 txt-gray">所在城市</view>
         <view class='padding-5'></view>
-        <view class='flex-row  hezi'>
-          <view class='h5'>深圳市</view>
-          <view class='flex-1'></view>
-          <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
-        </view>
-      </view>
+        <picker class='hezi' mode="region" bindchange="bindRegionChange">
+          <view class='flex-row'>
+            <input class='h5' disabled='false' value='{{city}}' placeholder='请选择所在城市'></input>
+            <view class='flex-1'></view>
+            <image class='icon' src='{{uploadpath}}resource/{{res.jiantou}}'></image>
+          </view>
+        </picker>
+      </view> -->
 
       <view class='padding-30'></view>
       <view class='txt-bold'>联系方式</view>
@@ -199,34 +144,29 @@
         <view class="h5 txt-gray">姓名</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <input class='h5' placeholder-style='color:gray' placeholder='请填写姓名'></input>
+          <input class='h5' placeholder-style='color:gray' bindfocus='c' value="{{name}}" bindblur='c1' bindinput='nameChange' placeholder='{{name}}'></input>
         </view>
       </view>
 
-      <view>
+      <!-- <view>
         <view class='padding-20'></view>
         <view class="h5 txt-gray">微信</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <input class='h5' placeholder-style='color:gray' placeholder='请填写微信号'></input>
+          <input class='h5' placeholder-style='color:gray' bindinput='weixinChange' placeholder='请填写微信号'></input>
+          <view class='flex-1'></view>
+          <button class='h6 txt-gary'>获取</button>
         </view>
-      </view>
+      </view> -->
 
       <view>
         <view class='padding-20'></view>
         <view class="h5 txt-gray">手机</view>
         <view class='padding-5'></view>
         <view class='flex-row  hezi'>
-          <input class='h5' placeholder-style='color:gray' placeholder='请填写手机'></input>
-        </view>
-      </view>
-
-      <view>
-        <view class='padding-20'></view>
-        <view class="h5 txt-gray">邮箱</view>
-        <view class='padding-5'></view>
-        <view class='flex-row  hezi'>
-          <input class='h5' placeholder-style='color:gray' placeholder='请填写邮箱'></input>
+          <input class='h5' name="mobile" value="{{mobile}}" bindfocus='d' bindblur='d1' type='number' bindinput='mobileChange' placeholder-style='color:gray' placeholder='{{mobile}}'></input>
+          <view class='flex-1'></view>
+          <!-- <button class='h6 txt-gary' open-type='getPhoneNumber' bindgetphonenumber='getPhoneNo'>获取</button> -->
         </view>
       </view>
 
@@ -235,11 +175,13 @@
   </view>
 
   <view class='padding-30'></view>
-  <button class='button txt-white flex-center'>确认</button>
+  <button class='button txt-white flex-center' bindtap='fabu'>提交</button>
   <view class='padding-40'></view>
 
 
+</view>
 
-
-
+<view class='hengxian'></view>
+<view class='_center'>
+  <text class='dd  h6 text-center'>{{info.beian}}</text>
 </view>

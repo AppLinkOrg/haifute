@@ -21,38 +21,32 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
+    this.Base.setMyData({
+      close: 'a'
+    })
+  }
+  onMyShow() {
+    var that = this;
     var solution = new SolutionApi();
+    var inst = new InstApi();
+    inst.info({}, (info) => {
+      console.log(info)
+      this.Base.setMyData({
+        info
+      });
+    })
     solution.solution1({}, (solution1) => {
       console.log(solution1)
       // console.log("啦啦啦")
       this.Base.setMyData({
         solution1
       });
-    })
-
-    solution.solution2({}, (solution2) => {
-      console.log(solution2)
-      this.Base.setMyData({
-        solution2
-      });
-    })
-
-    solution.solution3({}, (solution3) => {
-      console.log(solution3)
-      this.Base.setMyData({
-        solution3
-      });
-    })
-
-    solution.solution4({}, (solution4) => {
-      console.log(solution4)
-      this.Base.setMyData({
-        solution4
-      });
-    })
-  }
-  onMyShow() {
-    var that = this;
+    }) 
+    // solution.solutioninfo({ id: id }, (info) => {
+    //   this.Base.setMyData({
+    //     info
+    //   });
+    // })
   }
 
   setPageTitle(instinfo) {
@@ -60,9 +54,41 @@ class Content extends AppBase {
       title: '解决方案',
     })
   }
+  
+  open(e){
+    var id=e.currentTarget.id;
+    console.log(id+"搜索");
+    var solution = new SolutionApi();
+    solution.solutioninfo({ id: id }, (solutioninfo) => {
+      this.Base.setMyData({
+        solutioninfo
+      });
+    })
+    this.Base.setMyData({
+      close: 'b'
+    });
+  }
+
+  close(e){
+    var solution = new SolutionApi();
+    solution.solutioninfo({}, (solutioninfo) => {
+      this.Base.setMyData({
+        solutioninfo
+      });
+    })
+    this.Base.setMyData({
+      close: 'a'
+    });
+
+  }
+
+
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
+body.open = content.open;
+body.close = content.close;
 Page(body)

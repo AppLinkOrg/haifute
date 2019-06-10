@@ -9,20 +9,16 @@ import { MemberApi } from "apis/member.api";
 import { WechatApi } from "apis/wechat.api";
 
 export class AppBase {
-  static CITYID = 440300;
-  static CITYNAME = "深圳市";
-  static CITYSET = false;
   static BRANDAPPLE = 12;
   static QQMAPKEY = "IDVBZ-TSAKD-TXG43-H442I-74KVK-6LFF5";
   static UserInfo = {};
   static InstInfo = {};
   unicode = "helpfooter";
-  needauth = false;
+  needauth = true;
   pagetitle = null;
   app = null;
   options = null;
   data = {
-    apiurl: ApiConfig.GetApiUrl(),
     uploadpath: ApiConfig.GetUploadPath(),
     copyright: { name: "", website: "mecloud.com" }
   };
@@ -106,10 +102,8 @@ export class AppBase {
       contactweixin: base.contactweixin,
       download: base.download,
       checkPermission: base.checkPermission,
-      copytext: base.copytext,
       recorderManager: base.recorderManager,
-      backtotop: base.backtotop,
-      gotoBottom: base.gotoBottom
+      backtotop: base.backtotop
 
 
 
@@ -119,14 +113,13 @@ export class AppBase {
     console.log("yeah!");
   }
   onLoad(options) {
-   
-
     this.Base.options = options;
     console.log(options);
     console.log("onload");
+    
     this.Base.setBasicInfo();
     this.Base.setMyData({ options: options });
-
+    console.log(this.Base.unicode);
     ApiConfig.SetUnicode(this.Base.unicode);
 
 
@@ -157,15 +150,20 @@ export class AppBase {
     console.log("onReady");
   } minimm
   onShow() {
+   
     var that = this;
     var instapi = new InstApi();
     instapi.resources({}, (res) => {
       this.Base.setMyData({ res });
+      console.log(res);
+      console.log("牛");
     });
-
+ console.log(9999999999999999999);
     instapi.info({}, (instinfo) => {
+      console.log(55555555555);
       if (instinfo == null || instinfo == false) {
-
+        console.log(instinfo);
+      
         return;
       }
       AppBase.InstInfo = instinfo;
@@ -180,8 +178,10 @@ export class AppBase {
     if (AppBase.UserInfo.openid == undefined) {
       // 登录
       console.log("onShow");
+      console.log(5555);
       wx.login({
         success: res => {
+          console.log("cg");
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
           console.log("res");
           console.log(res);
@@ -227,25 +227,28 @@ export class AppBase {
                 console.log(AppBase.UserInfo);
                 ApiConfig.SetToken(data.openid);
                 console.log("goto update info");
+                that.onMyShow();
 
-
-                //that.Base.gotoOpenUserInfoSetting();
-                if (this.Base.needauth == true) {
-                  wx.redirectTo({
-                    url: '/pages/auth/auth',
-                  })
-                } else {
-                  that.onMyShow();
-                }
+                // that.Base.gotoOpenUserInfoSetting();
+                // if (this.Base.needauth == true) {
+                //   wx.redirectTo({
+                //     url: '/pages/auth/auth',
+                //   })
+                // } else {
+                //   that.onMyShow();
+                // }
               });
               //that.getAddress();
             }
           });
 
         }
+       
       })
       return false;
-    } else {
+    } 
+    
+    else {
       if (that.setMyData != undefined) {
         that.setMyData({ UserInfo: AppBase.UserInfo });
       } else {
@@ -263,14 +266,7 @@ export class AppBase {
     var memberapi = new MemberApi();
     var that = this;
     memberapi.info({}, (info) => {
-      
-      if (info == null || info.id == undefined) {
-        AppBase.UserInfo = {};
-        // wx.redirectTo({
-        //   url: '/pages/auth/auth',
-        // })
-        
-      }
+
       this.Base.setMyData({ memberinfo: info });
       that.onMyShow();
 
@@ -369,7 +365,7 @@ export class AppBase {
       phoneNumber: tel
     })
   }
-  getAddress(callback, failcallback, lat, lng) {
+  getAddress(callback, lat, lng) {
     var that = this;
     if (AppBase.QQMAP == null) {
       var QQMapWX = require('libs/qqmap/qqmap-wx-jssdk.js');
@@ -402,12 +398,6 @@ export class AppBase {
               console.log(res);
             }
           });
-        }, fail: function (res) {
-          console.log("fail open location");
-          console.log(res);
-          if (failcallback != undefined) {
-            failcallback();
-          }
         }
       });
     } else {
@@ -916,22 +906,6 @@ export class AppBase {
     wx.pageScrollTo({
       scrollTop: 0,
       duration: 300
-    })
-  }
-  gotoBottom() {
-    wx.pageScrollTo({
-      scrollTop: 100000,
-      duration: 300
-    })
-  }
-  copytext(e) {
-    var id = e.currentTarget.id;
-    wx.setClipboardData({
-      data: id,
-    })
-    wx.showToast({
-      title: '复制成功',
-
     })
   }
 } 
